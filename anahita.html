@@ -1,1 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <script>
+      var images = ['https://cdn.shopify.com/s/files/1/1061/1924/products/Slightly_Smiling_Face_Emoji_87fdae9b-b2af-4619-a37f-e484c5e2e7a4_large.png?v=1480481059, ','https://image.shutterstock.com/image-vector/emoticon-icon-emoji-260nw-681452926.jpg', 'http://www.konbini.com/wp-content/blogs.dir/13/files/2017/09/bloblob-480x279.jpg', 'https://i.pinimg.com/236x/67/ac/a8/67aca82baa85cdbc23f501aa921f362a.jpg']
+      var messages = ['You are a 23 year old woman from Iran who is a university student studying computer science. You are currently single and are from an upper class family.',
+        //SECOND SLIDE//
+        'You have recently attended protest against the Iranian government. A few days after this event you receive multiple threatening phone calls accusing you of subversive politics. You think about leaving Iran and think that the United States might be safer.',
+        //THIRD SLIDE//
+       'You have two visible options. Chose one then click next. <br> 1. Apply for political asylum <br> Political asylum is protection granted by a nation to someone who has left their native country as a political refugee. The problem with this is that deciding what conditions are so bad that political asylum is need is subjective. Since it is subjective deciding whether or not that an applicant can have refuge in our country can take years. This can expose the applicant to put themselves in more danger.<br> 2. Apply for a student visa <br> A student visa is a non-immigrant visa that grants the owner permission to study in the United States. It is only granted to people enrolled in qualified institutions. The cons of this visa is that the applicant is not allowed to work during the period of time they are in school. This means they have to prove financial support for the whole time they are a student. After graduating international students are left with the choice of either going back to their home or applying for Optional Practical Training (OPT). If they apply they have to find work in their field within 90 days or they are sent back home. If they find a job a common path to citizenship is having their employer sponsor them through the whole green card process, which could take up to 20 years or more and then apply for citizenship 5 years later.', '<a href="https://sasai2332.github.io/Immigration-Information/"> Go Back to Home Page </a>']
+      var i = 1
+
+  function show_faces() {
+      if (i > 3) {
+   
+        i = 0
+      }
+      if (i == 3) {
+           document.getElementById('BT').innerHTML="Start over"
+      } else {
+           document.getElementById('BT').innerHTML="Next"
+      }
+    document.getElementById('TT').innerHTML=messages[i]
+    document.getElementById('Anahita-1').src=images[i]
+    i++
+}
+</script>
+  </head>
+  <body>
+<!-- FIRST SLIDE--> 
+  <p id="TT">You are a 23 year old woman from Iran who is a university student studying computer science. You are currently single and are from an upper class family.</p>
+
+<img id="Anahita-1" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Slightly_Smiling_Face_Emoji_87fdae9b-b2af-4619-a37f-e484c5e2e7a4_large.png?v=1480481059" width="275px" height="275px">
+
+<button id="BT" onclick="show_faces()">Next</button>
+</body>
+</html>
