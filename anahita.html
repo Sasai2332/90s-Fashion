@@ -3,31 +3,53 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>Anahita</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 
   <script>
-      var images = ['https://cdn.shopify.com/s/files/1/1061/1924/products/Slightly_Smiling_Face_Emoji_87fdae9b-b2af-4619-a37f-e484c5e2e7a4_large.png?v=1480481059, ','https://image.shutterstock.com/image-vector/emoticon-icon-emoji-260nw-681452926.jpg', 'http://www.konbini.com/wp-content/blogs.dir/13/files/2017/09/bloblob-480x279.jpg', 'https://i.pinimg.com/236x/67/ac/a8/67aca82baa85cdbc23f501aa921f362a.jpg']
+      var images =['https://cdn.shopify.com/s/files/1/1061/1924/products/Slightly_Smiling_Face_Emoji_87fdae9b-b2af-4619-a37f-e484c5e2e7a4_large.png?v=1480481059, ','https://image.shutterstock.com/image-vector/emoticon-icon-emoji-260nw-681452926.jpg', 'http://www.konbini.com/wp-content/blogs.dir/13/files/2017/09/bloblob-480x279.jpg', 'https://i.pinimg.com/236x/67/ac/a8/67aca82baa85cdbc23f501aa921f362a.jpg']
       var messages = ['You are a 23 year old woman from Iran who is a university student studying computer science. You are currently single and are from an upper class family.',
         //SECOND SLIDE//
         'You have recently attended protest against the Iranian government. A few days after this event you receive multiple threatening phone calls accusing you of subversive politics. You think about leaving Iran and think that the United States might be safer.',
         //THIRD SLIDE//
-       'You have two visible options. Chose one then click next. <br> 1. Apply for political asylum <br> Political asylum is protection granted by a nation to someone who has left their native country as a political refugee. The problem with this is that deciding what conditions are so bad that political asylum is need is subjective. Since it is subjective deciding whether or not that an applicant can have refuge in our country can take years. This can expose the applicant to put themselves in more danger.<br> 2. Apply for a student visa <br> A student visa is a non-immigrant visa that grants the owner permission to study in the United States. It is only granted to people enrolled in qualified institutions. The cons of this visa is that the applicant is not allowed to work during the period of time they are in school. This means they have to prove financial support for the whole time they are a student. After graduating international students are left with the choice of either going back to their home or applying for Optional Practical Training (OPT). If they apply they have to find work in their field within 90 days or they are sent back home. If they find a job a common path to citizenship is having their employer sponsor them through the whole green card process, which could take up to 20 years or more and then apply for citizenship 5 years later.', '<a href="index.html"> Go Back to Home Page </a>']
-      var i = 1
+       'You have two visible options. Chose one then click next. <br> 1. Apply for political asylum <br> Political asylum is protection granted by a nation to someone who has left their native country as a political refugee. The problem with this is that deciding what conditions are so bad that political asylum is need is subjective. Since it is subjective deciding whether or not that an applicant can have refuge in our country can take years. This can expose the applicant to put themselves in more danger.<br> 2. Apply for a student visa <br> A student visa is a non-immigrant visa that grants the owner permission to study in the United States. It is only granted to people enrolled in qualified institutions. The cons of this visa is that the applicant is not allowed to work during the period of time they are in school. This means they have to prove financial support for the whole time they are a student. After graduating international students are left with the choice of either going back to their home or applying for Optional Practical Training (OPT). If they apply they have to find work in their field within 90 days or they are sent back home. If they find a job a common path to citizenship is having their employer sponsor them through the whole green card process, which could take up to 20 years or more and then apply for citizenship 5 years later. <br> <select id="visa" onchange="select_ending()"> <option value="0">Select Option</option> <option value="1">Option 1</option> <option value="2">Option 2</option>; </select>',
+       //FOURTH SLIDE//
+        '<a href="index.html"> Go Back to Home Page </a>']
 
-  function show_faces() {
+      var i = 1;
+
+
+  function select_ending() {
+    var x = document.getElementById("visa").value;
+    //alert("You selected: " + x)
+    show_options(x)
+
+  }
+  //ENDING SLIDES//
+  function show_options(value) {
+    if (value == 1) {
+      document.getElementById("TT").innerHTML="You decided to apply for political asylum but were put in a line of multiple cases all describing the horrors poor men and women have to face. Fortunately your threatening phone calls have not erupted into violence yet. Though the political asylum could take years and years there is one thing that could stop you from entering the country at all. That is the travel ban also known as the Muslim ban. It bans immigration and visitation from the countries Iran, Libya, Somalia, Syria, Yemen, North Korea and Venezuela. Chad, Iraq and Sudan used to be on the list but have been removed through executive order. The countries Iran, Libya, Somalia, Syria, and Yemen are majority-muslim nations and the one the country that is affected the most is Iran. People fleeing violence and horrid conditions like you won’t be able to have a better future because of this ban.";
+    }
+    if (value == 2) {
+      document.getElementById("TT").innerHTML="You decided to apply for a student visa and will be able to attend the institution soon. There is one thing that will make things more difficult. That is the travel ban also known as the Muslim ban. It bans immigration and visitation from the countries Iran, Libya, Somalia, Syria, Yemen, North Korea and Venezuela. Chad, Iraq and Sudan used to be on the list but have been removed through executive order. The countries Iran, Libya, Somalia, Syria, and Yemen are majority-muslim nations and the one the country that is affected the most is Iran. The good thing is that visas will still be issued to students but you will have more screening and vetting requirements. You can study and apply for OPT but you have to leave afterwards. Optional Practical Training usually only lasts up to a year but since you are in the STEM field you can fill out forms to grant extensions. People fleeing violence and horrid conditions like you won’t be able to have a better future because of this ban.";
+  }
+  }
+
+
+  function show_faces() { 
+    
       if (i > 3) {
    
-        i = 0
+        i = 0;
       }
       if (i == 3) {
-           document.getElementById('BT').innerHTML="Start over"
+           document.getElementById('BT').innerHTML="Start over";
       } else {
-           document.getElementById('BT').innerHTML="Next"
+           document.getElementById('BT').innerHTML="Next";
       }
-    document.getElementById('TT').innerHTML=messages[i]
-    document.getElementById('Anahita-1').src=images[i]
-    i++
+    document.getElementById('TT').innerHTML=messages[i];
+    document.getElementById('Anahita-1').src=images[i];
+    i++;
 }
 </script>
   </head>
